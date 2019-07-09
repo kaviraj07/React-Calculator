@@ -12,15 +12,24 @@ class App extends Component {
   usedKey = keyName =>{
    
     if (keyName === "="){
-      this.setState({
-        outputs: eval(this.state.outputs)
-      })
-    
+      try{
+        this.setState({
+          outputs: eval(this.state.outputs)
+        })
+      }catch (e){
+        this.setState({
+          outputs:"Operation Cannot Be Performed !"
+        })
+      }
     }else if (keyName === "Clear"){
       this.setState({
         outputs: ""
+      }) 
+    }else if(keyName ==="Backspace"){
+      this.setState({
+        outputs: this.state.outputs.slice(0,-1)
       })
-       
+
     }else{
         this.setState({
         outputs:this.state.outputs+keyName

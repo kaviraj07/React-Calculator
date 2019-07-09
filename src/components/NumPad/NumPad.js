@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import classes from './NumPad.css';
-
 
 class NumPad extends Component{
     
@@ -15,8 +13,8 @@ class NumPad extends Component{
     render(){
         return (
            
-            <Card className={classes.wrapper}>
-                <Card.Header>CALCULATOR</Card.Header>
+            <Card>
+                <Card.Header><strong>CALCULATOR</strong></Card.Header>
                 <Card.Body>
                     <ButtonGroup className="mr-2" aria-label="First group">
                         <Button name="0" onClick={this.usedKey}>0</Button>
@@ -36,7 +34,7 @@ class NumPad extends Component{
                     </ButtonGroup>
                     <br/><br/>
 
-                    <ButtonGroup className="mr-2" aria-label="Second group">
+                    <ButtonGroup className="mr-2" aria-label="Third group">
                         <Button name="+" onClick={this.usedKey}>+</Button>
                         <Button name="-" onClick={this.usedKey}>-</Button>
                         <Button name="/" onClick={this.usedKey}>/</Button>
@@ -44,8 +42,10 @@ class NumPad extends Component{
                         <Button name="=" onClick={this.usedKey}>=</Button>
                     </ButtonGroup>
                     <br/><br/>
-                    <Button name="Clear" onClick={this.usedKey}>Clear</Button>
-                    
+                    <ButtonGroup className="mr-2" aria-label="Third group">
+                        <Button name="Clear" onClick={this.usedKey}>Clear</Button>
+                        <Button name="Backspace" onClick={this.usedKey}>Backspace</Button>
+                    </ButtonGroup>
                 </Card.Body>
             </Card>
             

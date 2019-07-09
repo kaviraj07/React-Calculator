@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Card from 'react-bootstrap/Card';
+import './Result.css';
 
 class Result extends Component {
 
     render(){
         return (
-            <div className="result">
-                <p>{this.props.outputs}</p>
+            <div>
+                <Card body className="result">{this.props.outputs}</Card>
             </div>
         )
     }
